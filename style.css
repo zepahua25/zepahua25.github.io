@@ -1,0 +1,365 @@
+/*
+ * =================================
+ * TEMA: "EL CIRCUITO INTEGRADO" (Versión Final)
+ * =================================
+ */
+
+:root {
+    --color-embedded-blue: #00bfff;
+    /* Azul eléctrico para "Embedded" */
+    --color-web-green: #00cc66;
+    /* Verde vibrante para "Web/Java" */
+    --dark-bg: #121212;
+    /* Fondo oscuro (casi negro) */
+    --dark-card: #1e1e1e;
+    /* Fondo para tarjetas (como VSCode) */
+    --light-text: #e0e0e0;
+    /* Texto principal */
+    --heading-text: #ffffff;
+    /* Texto de títulos */
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    /* Fuente WEB: Limpia y moderna para párrafos */
+    font-family: 'Lato', sans-serif;
+    padding-top: 70px;
+    /* Espacio para la barra de navegación fija */
+}
+
+/* --- Tipografía Dual --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.nav-link {
+    /* Fuente EMBEDDED: Como de terminal, para títulos */
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    color: var(--heading-text);
+}
+
+.nav-link {
+    color: var(--light-text);
+    transition: color 0.3s;
+}
+
+/* --- Estilo para el link activo (Scrollspy) --- */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-embedded-blue);
+}
+
+
+.navbar-brand {
+    color: var(--color-embedded-blue);
+    /* Tu marca en el color "Embedded" */
+}
+
+.navbar-dark .navbar-toggler-icon {
+    filter: invert(1);
+    /* Para que el ícono de hamburguesa sea blanco */
+}
+
+/* --- El "Hero" (Presentación) --- */
+.hero {
+    position: relative;
+    /* ¡NUEVO! */
+    overflow: hidden;
+    /* ¡NUEVO! */
+    padding: 6rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, #1e1e1e 25%, #121212 100%);
+    border-bottom: 1px solid #333;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======================================================= */
+/* NUEVOS ESTILOS PARA LA ANIMACIÓN DEL HERO (CIRCUITOS + WEB) */
+/* ======================================================= */
+
+/* Contenedor para el texto (para ponerlo por encima) */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Importante: asegura que el texto esté sobre la animación */
+}
+
+/* El contenedor de la animación (ocupa todo el hero) */
+.hero-animation-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    /* Detrás del texto */
+    opacity: 0.3;
+    /* Hacemos las animaciones tenues para que no molesten */
+}
+
+/* Capa 1: "Los Circuitos" (Líneas de grid) */
+.hero-animation-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Crea las líneas del circuito (grid) */
+    background-image:
+        linear-gradient(to right, var(--color-embedded-blue) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--color-embedded-blue) 1px, transparent 1px);
+    background-size: 50px 50px;
+
+    /* Animación de movimiento */
+    animation: move-circuit 10s linear infinite;
+}
+
+/* Capa 2: "La Web" (Partículas digitales) */
+.hero-animation-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Crea las partículas (puntos) */
+    background-image: radial-gradient(var(--color-web-green) 1px, transparent 1px);
+    background-size: 10px 10px;
+
+    /* Animación de movimiento (diferente dirección y velocidad) */
+    animation: move-web 8s linear infinite;
+}
+
+/* Keyframes para la animación de "Circuitos" */
+@keyframes move-circuit {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 50px 0;
+        /* Se mueve horizontalmente */
+    }
+}
+
+/* Keyframes para la animación de "Web" */
+@keyframes move-web {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 40px;
+        /* Se mueve verticalmente */
+    }
+}
+
+
+/* --- Conectores Visuales (La "Creatividad") --- */
+.section-connector {
+    position: relative;
+    padding: 4rem 0;
+    /* El "circuito" que conecta las secciones */
+    border-left: 2px solid var(--color-embedded-blue);
+    margin-left: 2rem;
+    padding-left: 2rem;
+}
+
+.section-connector::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    /* (tamaño del círculo / 2) + borde */
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background-color: var(--color-embedded-blue);
+    border: 4px solid var(--dark-bg);
+    border-radius: 50%;
+}
+
+/* --- Colores de Conector para secciones específicas --- */
+.section-connector.web-section::before {
+    background-color: var(--color-web-green);
+}
+
+.section-connector.web-section {
+    border-left-color: var(--color-web-green);
+}
+
+#habilidades.section-connector::before {
+    background-color: var(--color-embedded-blue);
+}
+
+#habilidades.section-connector {
+    border-left-color: var(--color-embedded-blue);
+}
+
+#blog.section-connector::before {
+    background-color: var(--color-web-green);
+}
+
+#blog.section-connector {
+    border-left-color: var(--color-web-green);
+}
+
+
+/* --- Tarjetas de Proyecto (Estilo IDE) --- */
+.card {
+    background-color: var(--dark-card);
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-embedded-blue);
+}
+
+.card .card-body h5 {
+    color: var(--heading-text);
+}
+
+.card .card-body p {
+    color: var(--light-text);
+}
+
+/* --- Botones --- */
+.btn-primary {
+    background-color: var(--color-embedded-blue);
+    border-color: var(--color-embedded-blue);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.btn-primary:hover {
+    opacity: 0.8;
+    background-color: var(--color-embedded-blue);
+    border-color: var(--color-embedded-blue);
+}
+
+.btn-secondary {
+    background-color: var(--color-web-green);
+    border-color: var(--color-web-green);
+    font-family: 'Roboto Mono', monospace;
+    color: #111;
+}
+
+.btn-secondary:hover {
+    opacity: 0.8;
+    background-color: var(--color-web-green);
+    border-color: var(--color-web-green);
+}
+
+
+/* --- Sección de Habilidades (Icon Grid) --- */
+.skills-title {
+    color: var(--color-embedded-blue);
+    border-bottom: 2px solid var(--color-embedded-blue);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Título de la segunda/tercera fila */
+h4.skills-title:nth-of-type(2) {
+    color: var(--color-web-green);
+    border-bottom-color: var(--color-web-green);
+}
+
+h4.skills-title:nth-of-type(3) {
+    color: var(--light-text);
+    border-bottom-color: var(--light-text);
+}
+
+.skill-icon-card {
+    background-color: var(--dark-card);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.skill-icon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-embedded-blue);
+}
+
+.skill-icon-card .icon {
+    font-size: 3.5rem;
+    color: var(--color-embedded-blue);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.skill-icon-card h5 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--light-text);
+}
+
+/* Colores de iconos para las otras secciones */
+h4.skills-title:nth-of-type(2)+.row .skill-icon-card .icon {
+    color: var(--color-web-green);
+}
+
+h4.skills-title:nth-of-type(2)+.row .skill-icon-card:hover {
+    border-color: var(--color-web-green);
+}
+
+h4.skills-title:nth-of-type(3)+.row .skill-icon-card .icon {
+    color: var(--light-text);
+}
+
+h4.skills-title:nth-of-type(3)+.row .skill-icon-card:hover {
+    border-color: var(--light-text);
+}
+
+
+/* --- Sección de Contacto y Footer --- */
+.contact-section {
+    border-top: 1px solid #333;
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.social-links a {
+    /* ======================================================= */
+    /* CORRECCIÓN DE TAMAÑO DE ICONOS                          */
+    /* ======================================================= */
+    font-size: 3rem;
+    /* Aumentado de 2.5rem */
+    color: var(--light-text);
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-embedded-blue);
+    /* Color de acento al pasar el mouse */
+}
+
+.location-icon {
+    cursor: default !important;
+    /* Para que no parezca un link */
+}
+
+.location-icon:hover {
+    color: var(--light-text) !important;
+    /* Para que no cambie de color */
+}
