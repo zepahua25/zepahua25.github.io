@@ -1,6 +1,6 @@
 /*
  * =================================
- * TEMA: "EL CIRCUITO INTEGRADO" (Versión Final Limpia)
+ * TEMA: "EL CIRCUITO INTEGRADO" (Versión Final - Icon Badges)
  * =================================
  */
 
@@ -18,6 +18,7 @@ body {
     color: var(--light-text);
     font-family: 'Lato', sans-serif;
     padding-top: 70px;
+    /* Space for fixed navbar */
 }
 
 /* --- Tipografía Dual --- */
@@ -239,71 +240,112 @@ h6,
     color: var(--dark-bg);
 }
 
-/* --- Estilos Habilidades (Minimalista) --- */
+/* ======================================================= */
+/* ESTILOS: Habilidades (Estilo Icon Badges) */
+/* ======================================================= */
+
+/* Título de cada grupo */
 .skills-title {
     color: var(--color-embedded-blue);
+    /* Color por defecto */
     border-bottom: 2px solid var(--color-embedded-blue);
     padding-bottom: 5px;
     display: inline-block;
 }
 
-h4.skills-title:nth-of-type(2) {
+/* Color para el primer título (Web) */
+#habilidades h4.skills-title:nth-of-type(1) {
     color: var(--color-web-green);
     border-bottom-color: var(--color-web-green);
 }
 
-h4.skills-title:nth-of-type(3) {
+/* Color para el tercer título (Herramientas) */
+#habilidades h4.skills-title:nth-of-type(3) {
     color: var(--light-text);
     border-bottom-color: var(--light-text);
 }
 
-.skill-icon-card {
-    background-color: transparent;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    height: 100%;
+/* Contenedor para un grupo de skills */
+.skills-group {
+    display: flex;
+    /* Alinea los badges horizontalmente */
+    flex-wrap: wrap;
+    /* Permite que pasen a la siguiente línea */
+    gap: 0.75rem;
+    /* Espacio entre badges */
 }
 
-.skill-icon-card:hover {
-    transform: translateY(-5px);
+/* Estilo individual para cada "badge" de habilidad */
+.skill-badge {
     background-color: var(--dark-card);
-    border-color: var(--color-embedded-blue);
+    /* Fondo oscuro como las cards */
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    /* Esquinas redondeadas */
+    padding: 0.8rem 1rem;
+    /* Espaciado interno */
+    display: inline-flex;
+    /* Para que se ajuste al contenido */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    cursor: default;
+    /* Indica que no es clickeable */
+    min-width: 60px;
+    /* Ancho mínimo para consistencia */
+    text-align: center;
+    /* Centra el icono por si acaso */
 }
 
-.skill-icon-card .icon {
-    font-size: 3.5rem;
+/* Icono dentro del badge */
+.skill-badge .icon {
+    font-size: 2.2rem;
+    /* Tamaño del icono */
     color: var(--color-embedded-blue);
-    margin-bottom: 1rem;
+    /* Color por defecto (Azul Embedded) */
+    margin: 0;
     display: block;
 }
 
-.skill-icon-card h5 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--light-text);
+/* Hover effect: Ligero levantamiento y borde de color */
+.skill-badge:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-embedded-blue);
+    /* Borde azul por defecto al hacer hover */
+    background-color: #2a2a2a;
 }
 
-h4.skills-title:nth-of-type(2)+.row .skill-icon-card .icon {
+/* --- Colores específicos por grupo --- */
+
+/* Grupo 1 (Web): Iconos verdes, hover verde */
+#habilidades h4.skills-title:nth-of-type(1)+.skills-group .skill-badge .icon {
     color: var(--color-web-green);
 }
 
-h4.skills-title:nth-of-type(2)+.row .skill-icon-card:hover {
+#habilidades h4.skills-title:nth-of-type(1)+.skills-group .skill-badge:hover {
     border-color: var(--color-web-green);
 }
 
-h4.skills-title:nth-of-type(3)+.row .skill-icon-card .icon {
+/* Grupo 2 (Embedded): Iconos azules (ya es default), hover azul */
+/* No necesita regla específica para el color del icono si el default es azul */
+#habilidades h4.skills-title:nth-of-type(2)+.skills-group .skill-badge:hover {
+    border-color: var(--color-embedded-blue);
+}
+
+/* Grupo 3 (Herramientas): Iconos grises/blancos, hover gris/blanco */
+#habilidades h4.skills-title:nth-of-type(3)+.skills-group .skill-badge .icon {
     color: var(--light-text);
 }
 
-h4.skills-title:nth-of-type(3)+.row .skill-icon-card:hover {
+#habilidades h4.skills-title:nth-of-type(3)+.skills-group .skill-badge:hover {
     border-color: var(--light-text);
 }
 
+/* --- ESTILOS DE HABILIDADES DE TEXTO (Eliminados) --- */
+
+
 /* --- ESTILOS SWIPER ELIMINADOS --- */
+
 
 /* --- ESTILOS PARA LA TARJETA DE TRAYECTORIA (.job-card) --- */
 .job-card {

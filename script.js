@@ -38,6 +38,4 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error("Error inicializando Bootstrap ScrollSpy:", e);
     }
 
-    // --- Script de Swiper ELIMINADO ---
-
 }); // Fin del listener DOMContentLoaded
