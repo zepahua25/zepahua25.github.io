@@ -1,6 +1,6 @@
 /*
  * =================================
- * TEMA: "EL CIRCUITO INTEGRADO" (Versión Final - Icon Badges)
+ * TEMA: "EL CIRCUITO INTEGRADO" (Versión Final - Icon Badges + Nombres)
  * =================================
  */
 
@@ -241,7 +241,7 @@ h6,
 }
 
 /* ======================================================= */
-/* ESTILOS: Habilidades (Estilo Icon Badges) */
+/* ESTILOS: Habilidades (Estilo Icon Badges CON NOMBRES) */
 /* ======================================================= */
 
 /* Título de cada grupo */
@@ -275,39 +275,53 @@ h6,
     /* Espacio entre badges */
 }
 
-/* Estilo individual para cada "badge" de habilidad */
+/* Estilo individual del badge ajustado */
 .skill-badge {
     background-color: var(--dark-card);
-    /* Fondo oscuro como las cards */
     border: 1px solid #333;
     border-radius: 0.5rem;
-    /* Esquinas redondeadas */
-    padding: 0.8rem 1rem;
-    /* Espaciado interno */
-    display: inline-flex;
-    /* Para que se ajuste al contenido */
+    /* Ajusta el padding para dar espacio vertical */
+    padding: 1rem 0.75rem;
+    /* Cambia a flex column para poner el texto debajo */
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease-in-out;
     cursor: default;
-    /* Indica que no es clickeable */
-    min-width: 60px;
-    /* Ancho mínimo para consistencia */
+    /* Ancho fijo para que todos sean iguales */
+    width: 100px;
+    /* Altura mínima para alinear verticalmente si hay nombres largos/cortos */
+    min-height: 100px;
     text-align: center;
-    /* Centra el icono por si acaso */
 }
 
-/* Icono dentro del badge */
+/* Icono dentro del badge ajustado */
 .skill-badge .icon {
-    font-size: 2.2rem;
-    /* Tamaño del icono */
+    font-size: 2.5rem;
+    /* Ligeramente más pequeño */
     color: var(--color-embedded-blue);
-    /* Color por defecto (Azul Embedded) */
-    margin: 0;
+    /* Color por defecto */
+    margin-bottom: 0.5rem;
+    /* Espacio entre icono y nombre */
     display: block;
 }
 
-/* Hover effect: Ligero levantamiento y borde de color */
+/* Estilo para el nombre de la habilidad */
+.skill-name {
+    font-family: 'Lato', sans-serif;
+    /* Fuente normal */
+    font-size: 0.75rem;
+    /* Tamaño pequeño */
+    color: var(--light-text);
+    line-height: 1.2;
+    /* Ajusta el interlineado si el nombre ocupa 2 líneas */
+    display: block;
+    /* Asegura que esté debajo */
+}
+
+
+/* Hover effect */
 .skill-badge:hover {
     transform: translateY(-3px);
     border-color: var(--color-embedded-blue);
@@ -316,8 +330,6 @@ h6,
 }
 
 /* --- Colores específicos por grupo --- */
-
-/* Grupo 1 (Web): Iconos verdes, hover verde */
 #habilidades h4.skills-title:nth-of-type(1)+.skills-group .skill-badge .icon {
     color: var(--color-web-green);
 }
@@ -326,13 +338,10 @@ h6,
     border-color: var(--color-web-green);
 }
 
-/* Grupo 2 (Embedded): Iconos azules (ya es default), hover azul */
-/* No necesita regla específica para el color del icono si el default es azul */
 #habilidades h4.skills-title:nth-of-type(2)+.skills-group .skill-badge:hover {
     border-color: var(--color-embedded-blue);
 }
 
-/* Grupo 3 (Herramientas): Iconos grises/blancos, hover gris/blanco */
 #habilidades h4.skills-title:nth-of-type(3)+.skills-group .skill-badge .icon {
     color: var(--light-text);
 }
@@ -342,8 +351,6 @@ h6,
 }
 
 /* --- ESTILOS DE HABILIDADES DE TEXTO (Eliminados) --- */
-
-
 /* --- ESTILOS SWIPER ELIMINADOS --- */
 
 
