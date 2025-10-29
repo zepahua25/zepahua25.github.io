@@ -1,31 +1,23 @@
 /*
  * =================================
- * TEMA: "EL CIRCUITO INTEGRADO" (Versión Final)
+ * TEMA: "EL CIRCUITO INTEGRADO" (Versión Final Limpia)
  * =================================
  */
 
 :root {
     --color-embedded-blue: #00bfff;
-    /* Azul eléctrico para "Embedded" */
     --color-web-green: #00cc66;
-    /* Verde vibrante para "Web/Java" */
     --dark-bg: #121212;
-    /* Fondo oscuro (casi negro) */
     --dark-card: #1e1e1e;
-    /* Fondo para tarjetas (como VSCode) */
     --light-text: #e0e0e0;
-    /* Texto principal */
     --heading-text: #ffffff;
-    /* Texto de títulos */
 }
 
 body {
     background-color: var(--dark-bg);
     color: var(--light-text);
-    /* Fuente WEB: Limpia y moderna para párrafos */
     font-family: 'Lato', sans-serif;
     padding-top: 70px;
-    /* Espacio para la barra de navegación fija */
 }
 
 /* --- Tipografía Dual --- */
@@ -37,7 +29,6 @@ h5,
 h6,
 .navbar-brand,
 .nav-link {
-    /* Fuente EMBEDDED: Como de terminal, para títulos */
     font-family: 'Roboto Mono', monospace;
     font-weight: 700;
     color: var(--heading-text);
@@ -48,129 +39,113 @@ h6,
     transition: color 0.3s;
 }
 
-/* --- Estilo para el link activo (Scrollspy) --- */
 .nav-link:hover,
 .nav-link.active {
     color: var(--color-embedded-blue);
 }
 
-
 .navbar-brand {
     color: var(--color-embedded-blue);
-    /* Tu marca en el color "Embedded" */
 }
 
 .navbar-dark .navbar-toggler-icon {
     filter: invert(1);
-    /* Para que el ícono de hamburguesa sea blanco */
 }
 
-/* --- El "Hero" (Presentación) --- */
-.hero {
+/* --- ESTILOS DEL HERO-CARD --- */
+.hero-card {
+    background-color: var(--dark-card);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
     position: relative;
-    /* ¡NUEVO! */
     overflow: hidden;
-    /* ¡NUEVO! */
-    padding: 6rem 1rem;
-    text-align: center;
-    background: linear-gradient(135deg, #1e1e1e 25%, #121212 100%);
-    border-bottom: 1px solid #333;
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* ======================================================= */
-/* NUEVOS ESTILOS PARA LA ANIMACIÓN DEL HERO (CIRCUITOS + WEB) */
-/* ======================================================= */
+.hero-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-embedded-blue);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
 
-/* Contenedor para el texto (para ponerlo por encima) */
-.hero-content {
+/* Animación de "código" de fondo sutil */
+.hero-card::before {
+    content: '01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    font-size: 1.5rem;
+    color: rgba(0, 191, 255, 0.05);
+    animation: scroll-code 20s linear infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Roboto Mono', monospace;
+    z-index: 1;
+}
+
+@keyframes scroll-code {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.hero-card .row {
     position: relative;
     z-index: 2;
-    /* Importante: asegura que el texto esté sobre la animación */
 }
 
-/* El contenedor de la animación (ocupa todo el hero) */
-.hero-animation-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    /* Detrás del texto */
-    opacity: 0.3;
-    /* Hacemos las animaciones tenues para que no molesten */
+/* El H1 (con la animación Typed) es verde */
+.hero-card .display-4 {
+    color: var(--color-web-green);
+    font-weight: 700;
+    min-height: 4.5rem;
+    /* Evita saltos mientras escribe */
 }
 
-/* Capa 1: "Los Circuitos" (Líneas de grid) */
-.hero-animation-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Cursor parpadeante de Typed.js */
+.hero-card .typed-cursor {
+    color: var(--color-web-green);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Subtítulo estático y legible */
+.hero-card .hero-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25rem;
+    color: var(--light-text);
+    font-weight: 400;
+}
+
+.hero-img {
     width: 100%;
-    height: 100%;
-
-    /* Crea las líneas del circuito (grid) */
-    background-image:
-        linear-gradient(to right, var(--color-embedded-blue) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--color-embedded-blue) 1px, transparent 1px);
-    background-size: 50px 50px;
-
-    /* Animación de movimiento */
-    animation: move-circuit 10s linear infinite;
-}
-
-/* Capa 2: "La Web" (Partículas digitales) */
-.hero-animation-bg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    /* Crea las partículas (puntos) */
-    background-image: radial-gradient(var(--color-web-green) 1px, transparent 1px);
-    background-size: 10px 10px;
-
-    /* Animación de movimiento (diferente dirección y velocidad) */
-    animation: move-web 8s linear infinite;
-}
-
-/* Keyframes para la animación de "Circuitos" */
-@keyframes move-circuit {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 50px 0;
-        /* Se mueve horizontalmente */
-    }
-}
-
-/* Keyframes para la animación de "Web" */
-@keyframes move-web {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 0 40px;
-        /* Se mueve verticalmente */
-    }
+    max-width: 250px;
+    border-radius: 50%;
+    border: 4px solid var(--color-embedded-blue);
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+    margin: 0 auto;
+    display: block;
 }
 
 
-/* --- Conectores Visuales (La "Creatividad") --- */
+/* --- Conectores Visuales --- */
 .section-connector {
     position: relative;
     padding: 4rem 0;
-    /* El "circuito" que conecta las secciones */
     border-left: 2px solid var(--color-embedded-blue);
     margin-left: 2rem;
     padding-left: 2rem;
@@ -180,7 +155,6 @@ h6,
     content: '';
     position: absolute;
     left: -10px;
-    /* (tamaño del círculo / 2) + borde */
     top: 0;
     width: 18px;
     height: 18px;
@@ -189,7 +163,6 @@ h6,
     border-radius: 50%;
 }
 
-/* --- Colores de Conector para secciones específicas --- */
 .section-connector.web-section::before {
     background-color: var(--color-web-green);
 }
@@ -241,29 +214,32 @@ h6,
     background-color: var(--color-embedded-blue);
     border-color: var(--color-embedded-blue);
     font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    color: var(--dark-bg);
 }
 
 .btn-primary:hover {
     opacity: 0.8;
     background-color: var(--color-embedded-blue);
     border-color: var(--color-embedded-blue);
+    color: var(--dark-bg);
 }
 
 .btn-secondary {
-    background-color: var(--color-web-green);
+    background-color: transparent;
     border-color: var(--color-web-green);
     font-family: 'Roboto Mono', monospace;
-    color: #111;
+    font-weight: 700;
+    color: var(--color-web-green);
 }
 
 .btn-secondary:hover {
-    opacity: 0.8;
     background-color: var(--color-web-green);
     border-color: var(--color-web-green);
+    color: var(--dark-bg);
 }
 
-
-/* --- Sección de Habilidades (Icon Grid) --- */
+/* --- Estilos Habilidades (Minimalista) --- */
 .skills-title {
     color: var(--color-embedded-blue);
     border-bottom: 2px solid var(--color-embedded-blue);
@@ -271,7 +247,6 @@ h6,
     display: inline-block;
 }
 
-/* Título de la segunda/tercera fila */
 h4.skills-title:nth-of-type(2) {
     color: var(--color-web-green);
     border-bottom-color: var(--color-web-green);
@@ -283,7 +258,7 @@ h4.skills-title:nth-of-type(3) {
 }
 
 .skill-icon-card {
-    background-color: var(--dark-card);
+    background-color: transparent;
     border: 1px solid #333;
     border-radius: 10px;
     padding: 1.5rem 1rem;
@@ -294,7 +269,7 @@ h4.skills-title:nth-of-type(3) {
 
 .skill-icon-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background-color: var(--dark-card);
     border-color: var(--color-embedded-blue);
 }
 
@@ -312,7 +287,6 @@ h4.skills-title:nth-of-type(3) {
     color: var(--light-text);
 }
 
-/* Colores de iconos para las otras secciones */
 h4.skills-title:nth-of-type(2)+.row .skill-icon-card .icon {
     color: var(--color-web-green);
 }
@@ -329,37 +303,116 @@ h4.skills-title:nth-of-type(3)+.row .skill-icon-card:hover {
     border-color: var(--light-text);
 }
 
+/* --- ESTILOS SWIPER ELIMINADOS --- */
 
-/* --- Sección de Contacto y Footer --- */
+/* --- ESTILOS PARA LA TARJETA DE TRAYECTORIA (.job-card) --- */
+.job-card {
+    background-color: var(--dark-card);
+    border: 1px solid #333;
+    border-left: 4px solid var(--color-embedded-blue);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-embedded-blue);
+}
+
+.job-card .job-title {
+    color: var(--heading-text);
+    font-size: 1.25rem;
+}
+
+.job-card .job-company {
+    color: var(--color-embedded-blue);
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.job-card .job-dates {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.job-card .job-responsibilities {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    color: var(--light-text);
+}
+
+.job-card .job-responsibilities li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- ESTILOS: Tarjeta Placeholder --- */
+.card-placeholder {
+    border-style: dashed;
+    border-width: 2px;
+    background-color: transparent;
+    border-color: #444;
+}
+
+.card-placeholder:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #555;
+    background-color: var(--dark-card);
+}
+
+.icon-placeholder {
+    font-size: 3.5rem;
+    color: #444;
+}
+
+/* --- ESTILOS PARA LA SECCIÓN DE CONTACTO --- */
 .contact-section {
     border-top: 1px solid #333;
     padding: 4rem 0;
-    text-align: center;
     margin-top: 4rem;
 }
 
-.social-links a {
-    /* ======================================================= */
-    /* CORRECCIÓN DE TAMAÑO DE ICONOS                          */
-    /* ======================================================= */
-    font-size: 3rem;
-    /* Aumentado de 2.5rem */
+.form-control {
+    background-color: var(--dark-card);
+    border-color: #333;
     color: var(--light-text);
-    margin: 0 1rem;
-    transition: color 0.3s ease;
 }
 
-.social-links a:hover {
+.form-control:focus {
+    background-color: var(--dark-card);
+    border-color: var(--color-embedded-blue);
+    box-shadow: 0 0 0 0.25rem rgba(0, 191, 255, 0.25);
+    color: var(--light-text);
+}
+
+.form-label {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--heading-text);
+}
+
+.social-links-contact a {
+    font-size: 2.5rem;
+    color: var(--light-text);
+    margin: 0 0.75rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.social-links-contact a:hover {
     color: var(--color-embedded-blue);
-    /* Color de acento al pasar el mouse */
+    transform: translateY(-3px);
 }
 
 .location-icon {
     cursor: default !important;
-    /* Para que no parezca un link */
 }
 
 .location-icon:hover {
     color: var(--light-text) !important;
-    /* Para que no cambie de color */
+    transform: none !important;
 }

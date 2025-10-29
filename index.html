@@ -7,11 +7,13 @@
     <title>Jose Daniel Toledo Zepahua - Portafolio</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Lato:wght@400;700&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -28,7 +30,8 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#acerca">Acerca de Mí</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades (CV)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#trayectoria">Trayectoria</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portafolio-web">Portafolio Web</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portafolio-embedded">Portafolio Embedded</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
@@ -38,17 +41,29 @@
         </div>
     </nav>
 
-    <header class="hero" id="hero">
-        <div class="hero-animation-bg"></div>
-        <div class="container hero-content">
-            <h1 class="display-3">Jose Daniel Toledo Zepahua</h1>
-            <p class="hero-subtitle">
-                <span class="typed-text"></span>
-            </p>
-        </div>
-    </header>
-
     <div class="container" style="max-width: 960px;">
+
+        <header class="hero-card" id="hero">
+            <div class="hero-card-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4">
+                            <span class="typed-text"></span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Ing. de Software Embebido | Java Fullstack Developer
+                        </p>
+                        <div class="mt-4">
+                            <a href="#contacto" class="btn btn-primary me-3">Contactar</a>
+                            <a href="#portafolio-web" class="btn btn-secondary">Ver Proyectos</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-block">
+                        <img src="./Pictures/profile.jpg" alt="Jose Daniel Toledo Zepahua" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <section id="acerca" class="section-connector">
             <h2>01. ACERCA DE MÍ</h2>
@@ -69,33 +84,29 @@
         </section>
 
         <section id="habilidades" class="section-connector">
-            <h2>02. HABILIDADES (CV)</h2>
+            <h2>02. HABILIDADES</h2>
             <p class="text-muted">Un resumen de las tecnologías que domino, combinando mi experiencia en embedded y mi
                 nuevo camino fullstack.</p>
 
             <h4 class="skills-title mt-4">Programación y Desarrollo Web</h4>
             <div class="row g-4 mt-2">
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxl-java icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxl-java icon'></i>
                         <h5>Java</h5>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxs-leaf icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxs-leaf icon'></i>
                         <h5>Spring Boot</h5>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxl-html5 icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxl-html5 icon'></i>
                         <h5>HTML5</h5>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxl-css3 icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxl-css3 icon'></i>
                         <h5>CSS3</h5>
                     </div>
                 </div>
@@ -104,26 +115,22 @@
             <h4 class="skills-title mt-5">Embedded y Automotriz</h4>
             <div class="row g-4 mt-2">
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxl-c-plus-plus icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxl-c-plus-plus icon'></i>
                         <h5>C (Embedded)</h5>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxs-car-mechanic icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxs-car-mechanic icon'></i>
                         <h5>AUTOSAR</h5>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxs-chip icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxs-chip icon'></i>
                         <h5>Microcontroladores</h5>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxs-network-chart icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxs-network-chart icon'></i>
                         <h5>CAN / UDS</h5>
                     </div>
                 </div>
@@ -132,26 +139,22 @@
             <h4 class="skills-title mt-5">Herramientas y Metodologías</h4>
             <div class="row g-4 mt-2">
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxl-git icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxl-git icon'></i>
                         <h5>Git / GitHub</h5>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxl-jira icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxl-jira icon'></i>
                         <h5>Jira / Confluence</h5>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxs-car-garage icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxs-car-garage icon'></i>
                         <h5>Vector CANoe</h5>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-icon-card">
-                        <i class='bx bxs-vial icon'></i>
+                    <div class="skill-icon-card"><i class='bx bxs-vial icon'></i>
                         <h5>GTest / Ceedling</h5>
                     </div>
                 </div>
@@ -161,8 +164,60 @@
                 Completo</a>
         </section>
 
+
+        <section id="trayectoria" class="section-connector">
+            <h2>03. TRAYECTORIA PROFESIONAL</h2>
+            <p class="text-muted">Mi experiencia en el sector automotriz y de software.</p>
+
+            <div class="row g-4 mt-4">
+
+                <div class="col-12">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h5 class="job-title">Embedded Software Engineer</h5>
+                            <h6 class="job-company">Elektrobit</h6>
+                            <span class="job-dates text-muted">2023 - Presente</span>
+                        </div>
+                        <ul class="job-responsibilities">
+                            <li>Desarrollo de software en C Embebido y arquitectura de ciberseguridad para proyectos
+                                automotrices (AUTOSAR).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h5 class="job-title">Embedded Software Developer</h5>
+                            <h6 class="job-company">CARSO / CIDEC / APTIV</h6>
+                            <span class="job-dates text-muted">2021 - 2023</span>
+                        </div>
+                        <ul class="job-responsibilities">
+                            <li>Desarrollo y mantenimiento de firmware para módulos de control de energía (BCM) usando
+                                protocolos UDS y CAN.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h5 class="job-title">Firmware Developer</h5>
+                            <h6 class="job-company">Mabe</h6>
+                            <span class="job-dates text-muted">2020 - 2021</span>
+                        </div>
+                        <ul class="job-responsibilities">
+                            <li>Desarrollo de firmware en C para electrodomésticos (IoT), enfocado en la optimización
+                                del consumo de energía y validación.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <section id="portafolio-web" class="section-connector web-section">
-            <h2>03. PORTAFOLIO JAVA FULLSTACK</h2>
+            <h2>04. PORTAFOLIO JAVA FULLSTACK</h2>
             <p class="text-muted">Proyectos que demuestran mis nuevas habilidades en el ecosistema Java y desarrollo
                 web.</p>
 
@@ -179,7 +234,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="card h-100">
                         <img src="./Pictures/Proyecto.png" class="card-img-top" alt="Proyecto API">
@@ -196,11 +250,12 @@
         </section>
 
         <section id="portafolio-embedded" class="section-connector">
-            <h2>04. EXPERIENCIA EMBEDDED</h2>
+            <h2>05. PORTAFOLIO EMBEDDED</h2>
             <p class="text-muted">Debido a los acuerdos de confidencialidad (NDA) del sector automotriz, no puedo
-                mostrar el código fuente. En su lugar, describo los logros clave de mis roles.</p>
+                mostrar el código fuente. En su lugar, describo los logros clave.</p>
 
             <div class="row g-4 mt-3">
+
                 <div class="col-md-6">
                     <div class="card h-100">
                         <div class="card-body">
@@ -213,6 +268,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6">
                     <div class="card h-100">
                         <div class="card-body">
@@ -225,34 +281,48 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 card-placeholder">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <i class='bx bxs-chip icon-placeholder'></i>
+                            <h5 class="card-title text-muted mt-3">Próximo Proyecto Embedded</h5>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section id="blog" class="section-connector web-section">
-            <h2>05. BLOG</h2>
+            <h2>06. BLOG</h2>
             <p class="text-muted">Reflexiones sobre mi carrera y aprendizaje.</p>
 
             <div class="row g-4 mt-3">
                 <div class="col-md-8 offset-md-2">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Reflexión de mi camino como desarrollador Java</h5>
+                            <h5 class="card-title">Reflexión de mi camino como desarrollador</h5>
+
                             <p class="card-text">
                                 Mi carrera como desarrollador no comenzó con Java. Mis cimientos se forjaron en el mundo
                                 del software embebido automotriz gracias a mis estudios como Ingeniero Electrónico.
-                                Durante más de cuatro años, mi lenguaje principal fue
-                                C, mi biblia fue el estándar MISRA, y mi realidad diaria fue trabajar con
-                                microcontroladores, AUTOSAR y protocolos de bajo nivel.
+                                Durante más de cuatro años, mi lenguaje principal fue C, mi biblia fue el estándar
+                                MISRA,
+                                y mi realidad diaria fue trabajar con microcontroladores, AUTOSAR y protocolos de bajo
+                                nivel.
                             </p>
                             <p class="card-text">
                                 Este mundo me enseñó la disciplina. Me enseñó que cada byte de memoria cuenta y que un
                                 error de software tiene consecuencias en el mundo real.
                             </p>
                             <p class="card-text">
-                                Decidir saltar a **Java Fullstack** con Generation Mexico fue un giro deliberado. Quería
+                                Decidir saltar a <strong>Java Fullstack</strong> con Generation Mexico fue un giro
+                                deliberado. Quería
                                 pasar 'de los circuitos a la nube'. El "choque" inicial fue real: pasar del manejo
                                 manual de memoria en C a la recolección de basura de Java, y de la configuración de
-                                *stacks* de BSW a la arquitectura de una API REST con **Spring Boot**, es cambiar de
+                                <em>stacks</em> de BSW a la arquitectura de una API REST con <strong>Spring
+                                    Boot</strong>, es cambiar de
                                 paradigma.
                             </p>
                             <p class="card-text">
@@ -283,20 +353,47 @@
         <section id="contacto" class="contact-section">
             <h2>Contacto</h2>
             <p>Conectemos. Estoy abierto a nuevas oportunidades que unan mis dos pasiones.</p>
-            <div class="social-links mt-4">
-                <a href="https://www.linkedin.com/in/zepahua25/" target="_blank" title="LinkedIn"><i
-                        class='bx bxl-linkedin-square'></i></a>
-                <a href="https://github.com/zepahua25" target="_blank" title="GitHub"><i class='bx bxl-github'></i></a>
-                <a href="mailto:jdaniel.zepahua@gmail.com" target="_blank" title="Email"><i
-                        class='bx bxs-envelope'></i></a>
-                <a href="#" class="location-icon" title="Querétaro, México "><i class='bx bxs-map'></i></a>
+
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <form action="https://formspree.io/f/TU_FORM_ID" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+                <div class="col-lg-4 d-flex align-items-center justify-content-center mt-5 mt-lg-0">
+                    <div class="social-links-contact">
+                        <a href="https://www.linkedin.com/in/zepahua25/" target="_blank" title="LinkedIn"><i
+                                class='bx bxl-linkedin-square'></i></a>
+                        <a href="https://github.com/zepahua25" target="_blank" title="GitHub"><i
+                                class='bx bxl-github'></i></a>
+                        <a href="mailto:jdaniel.zepahua@gmail.com" target="_blank" title="Email"><i
+                                class='bx bxs-envelope'></i></a>
+                        <a href="#" class="location-icon" title="Querétaro, México "><i class='bx bxs-map'></i></a>
+                    </div>
+                </div>
             </div>
+
             <p class="mt-5 text-muted">© 2025 Jose Daniel Toledo Zepahua</p>
         </section>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/js/typed.umd.js"></script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
     <script src="./script.js"></script>
 </body>
 
