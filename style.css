@@ -129,7 +129,7 @@ h6,
 
 .hero-img {
     width: 100%;
-    max-width: 250px;
+    max-width: 200px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
@@ -280,7 +280,6 @@ h6,
     justify-content: center;
     transition: all 0.2s ease-in-out;
     cursor: default;
-    width: 100px;
     min-height: 100px;
     text-align: center;
 }
@@ -521,4 +520,44 @@ h6,
 /* Quita el color azul/verde de los títulos de las tarjetas de job-card */
 #formacion .job-card .card-title {
     color: var(--heading-text);
+}
+
+@media (max-width: 576px) {
+    .skills-group {
+        /* Permite más espacio horizontal en móviles */
+        gap: 0.5rem;
+    }
+
+    .skill-badge {
+        /* En pantallas extra-pequeñas, permite que el ancho se ajuste */
+        width: 80px;
+        /* Ancho fijo ligeramente más pequeño, o: */
+        /* width: calc(25% - 0.5rem); Esto forzaría 4 por fila con margen */
+        min-height: 80px;
+    }
+
+    .skill-badge .icon {
+        font-size: 2rem;
+        /* Reduce el tamaño del icono */
+    }
+
+    .skill-name {
+        font-size: 0.7rem;
+        /* Reduce el tamaño del texto */
+    }
+}
+
+@media (max-width: 576px) {
+    .section-connector {
+        /* Reduce el margen izquierdo para que el contenido no se empuje tanto */
+        margin-left: 1rem;
+        padding-left: 1.5rem;
+        padding: 3rem 0;
+        /* Un poco menos de padding vertical */
+    }
+
+    .section-connector::before {
+        /* Ajusta la posición del círculo para el nuevo margen */
+        left: -8px;
+    }
 }
