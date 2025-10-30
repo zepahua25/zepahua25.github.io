@@ -1,6 +1,6 @@
 /*
  * =================================
- * TEMA: "EL CIRCUITO INTEGRADO" (Versión Final - Icon Badges + Nombres)
+ * TEMA: "EL CIRCUITO INTEGRADO"
  * =================================
  */
 
@@ -18,7 +18,6 @@ body {
     color: var(--light-text);
     font-family: 'Lato', sans-serif;
     padding-top: 70px;
-    /* Space for fixed navbar */
 }
 
 /* --- Tipografía Dual --- */
@@ -104,15 +103,12 @@ h6,
     z-index: 2;
 }
 
-/* El H1 (con la animación Typed) es verde */
 .hero-card .display-4 {
     color: var(--color-web-green);
     font-weight: 700;
     min-height: 4.5rem;
-    /* Evita saltos mientras escribe */
 }
 
-/* Cursor parpadeante de Typed.js */
 .hero-card .typed-cursor {
     color: var(--color-web-green);
     animation: blink 0.7s infinite;
@@ -124,7 +120,6 @@ h6,
     }
 }
 
-/* Subtítulo estático y legible */
 .hero-card .hero-subtitle {
     font-family: 'Lato', sans-serif;
     font-size: 1.25rem;
@@ -135,6 +130,8 @@ h6,
 .hero-img {
     width: 100%;
     max-width: 250px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 50%;
     border: 4px solid var(--color-embedded-blue);
     box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
@@ -241,13 +238,12 @@ h6,
 }
 
 /* ======================================================= */
-/* ESTILOS: Habilidades (Estilo Icon Badges CON NOMBRES) */
+/* ESTILOS: Habilidades */
 /* ======================================================= */
 
 /* Título de cada grupo */
 .skills-title {
     color: var(--color-embedded-blue);
-    /* Color por defecto */
     border-bottom: 2px solid var(--color-embedded-blue);
     padding-bottom: 5px;
     display: inline-block;
@@ -268,11 +264,8 @@ h6,
 /* Contenedor para un grupo de skills */
 .skills-group {
     display: flex;
-    /* Alinea los badges horizontalmente */
     flex-wrap: wrap;
-    /* Permite que pasen a la siguiente línea */
     gap: 0.75rem;
-    /* Espacio entre badges */
 }
 
 /* Estilo individual del badge ajustado */
@@ -280,18 +273,14 @@ h6,
     background-color: var(--dark-card);
     border: 1px solid #333;
     border-radius: 0.5rem;
-    /* Ajusta el padding para dar espacio vertical */
     padding: 1rem 0.75rem;
-    /* Cambia a flex column para poner el texto debajo */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease-in-out;
     cursor: default;
-    /* Ancho fijo para que todos sean iguales */
     width: 100px;
-    /* Altura mínima para alinear verticalmente si hay nombres largos/cortos */
     min-height: 100px;
     text-align: center;
 }
@@ -299,25 +288,18 @@ h6,
 /* Icono dentro del badge ajustado */
 .skill-badge .icon {
     font-size: 2.5rem;
-    /* Ligeramente más pequeño */
     color: var(--color-embedded-blue);
-    /* Color por defecto */
     margin-bottom: 0.5rem;
-    /* Espacio entre icono y nombre */
     display: block;
 }
 
 /* Estilo para el nombre de la habilidad */
 .skill-name {
     font-family: 'Lato', sans-serif;
-    /* Fuente normal */
     font-size: 0.75rem;
-    /* Tamaño pequeño */
     color: var(--light-text);
     line-height: 1.2;
-    /* Ajusta el interlineado si el nombre ocupa 2 líneas */
     display: block;
-    /* Asegura que esté debajo */
 }
 
 
@@ -325,7 +307,6 @@ h6,
 .skill-badge:hover {
     transform: translateY(-3px);
     border-color: var(--color-embedded-blue);
-    /* Borde azul por defecto al hacer hover */
     background-color: #2a2a2a;
 }
 
@@ -349,9 +330,6 @@ h6,
 #habilidades h4.skills-title:nth-of-type(3)+.skills-group .skill-badge:hover {
     border-color: var(--light-text);
 }
-
-/* --- ESTILOS DE HABILIDADES DE TEXTO (Eliminados) --- */
-/* --- ESTILOS SWIPER ELIMINADOS --- */
 
 
 /* --- ESTILOS PARA LA TARJETA DE TRAYECTORIA (.job-card) --- */
@@ -387,6 +365,7 @@ h6,
     font-size: 0.9rem;
     display: block;
     margin-top: 0.25rem;
+    color: var(--light-text) !important;
 }
 
 .job-card .job-responsibilities {
@@ -464,4 +443,82 @@ h6,
 .location-icon:hover {
     color: var(--light-text) !important;
     transform: none !important;
+}
+
+/* ======================================================= */
+/* ESTILOS: 04. FORMACIÓN ACADÉMICA */
+/* ======================================================= */
+
+.custom-embedded-title {
+    color: var(--color-embedded-blue) !important;
+}
+
+.custom-web-title {
+    color: var(--color-web-green) !important;
+}
+
+.custom-institution-company {
+    color: var(--light-text) !important;
+    font-family: 'Lato', sans-serif !important;
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+/* La tarjeta del ITQ usa el borde Embedded Blue por defecto */
+.job-card-itq:hover {
+    border-left-color: var(--color-embedded-blue) !important;
+    border-color: var(--color-embedded-blue);
+}
+
+/* El BYU Pathway usa el borde Web Green */
+.job-card-byu {
+    border-left-color: var(--color-web-green) !important;
+}
+
+.job-card-byu:hover {
+    border-left-color: var(--color-web-green) !important;
+    border-color: var(--color-web-green);
+}
+
+/* --- Estilo para los Logos (NUEVO TAMAÑO) --- */
+.institution-logo {
+    width: 50px;
+    /* Tamaño Aumentado */
+    height: 50px;
+    /* Tamaño Aumentado */
+    object-fit: contain;
+    /* Para logos con fondo incrustado, si fuera necesario: background-color: #f8f9fa; */
+    padding: 0px;
+    /* Eliminamos el padding para el SVG */
+    border-radius: 5px;
+}
+
+/* --- Estilo para los Iconos --- */
+.academic-icon {
+    color: var(--light-text) !important;
+    transition: color 0.3s;
+    font-size: 3rem !important;
+    opacity: 0.7;
+}
+
+/* Efecto hover: se vuelven completamente blancos al pasar el ratón por la tarjeta */
+.job-card:hover .academic-icon {
+    opacity: 1;
+}
+
+/* Ajuste del texto Periodo/Enfoque */
+#formacion .job-responsibilities {
+    font-family: 'Lato', sans-serif;
+    padding-left: 0;
+}
+
+/* Asegura que el contenido se estire */
+.card-body.d-flex.flex-column {
+    justify-content: space-between;
+}
+
+/* Quita el color azul/verde de los títulos de las tarjetas de job-card */
+#formacion .job-card .card-title {
+    color: var(--heading-text);
 }
